@@ -39,7 +39,15 @@ pipeline {
                                         steps {
                                             echo "running the integration test"
                                         }
-                       }       
+                       }  
+
+                     stages {
+                             stage('Build') { 
+                                         steps {
+                                            sh 'mvn -B -DskipTests clean package' 
+            }
+        }
+    }     
                           }
                       }
 
